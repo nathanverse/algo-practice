@@ -21,6 +21,7 @@ tasks.test {
     testLogging {
         events("passed", "skipped", "failed")
     }
+    dependsOn("compileKotlin")
 }
 
 kotlin {
