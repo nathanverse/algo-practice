@@ -4,7 +4,6 @@ import org.example.heap.AlmostSortedArray
 import org.junit.jupiter.api.Test
 
 object AlmostSortedArrayTest {
-    // {}
     @Test
     fun happyPath(){
         val input = listOf(3,-1,2,6,4,5,8)
