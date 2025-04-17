@@ -1,6 +1,5 @@
 package tree;
 
-import com.sun.source.tree.Tree;
 
 import java.util.List;
 
@@ -23,9 +22,13 @@ public class TreeNode {
         int leftNodeIndex = curIndex*2 + 1;
         int rightNodeIndex = curIndex*2 + 2;
 
-        TreeNode rootNode = new TreeNode(integerList.get(curIndex));
-        rootNode.left = rootNode.buildNodeRecursive(integerList, leftNodeIndex);
-        rootNode.right = rootNode.buildNodeRecursive(integerList, rightNodeIndex);
+        TreeNode rootNode = integerList.get(curIndex) == null ? null : new TreeNode(integerList.get(curIndex));
+        if(rootNode != null){
+            rootNode.left = rootNode.buildNodeRecursive(integerList, leftNodeIndex);
+        }
+        if (rootNode != null){
+            rootNode.right = rootNode.buildNodeRecursive(integerList, rightNodeIndex);
+        }
         return rootNode;
     }
 
